@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Header/>
       <Hero/>
-      <h1>Hello Community</h1>
+      <h1 className="m-5">Hello Community</h1>
       <LocalNews/>
       <Sponsors/>
       
