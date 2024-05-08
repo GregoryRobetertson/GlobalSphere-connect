@@ -16,7 +16,7 @@ export default function LocalNews() {
             }    
         }
         fetchNews();
-    }, []); // Empty dependency array ensures that fetchNews() runs only once
+    }, []);
 
     return (
         <div>

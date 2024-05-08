@@ -1,6 +1,7 @@
+'use client';
 import react from "react";
-
-export default function Hero() {
+import LogInWithGoogle from "./LoginWithGoogle";
+export default function Hero({getuser}) {
     return (
         <section className="m-2.5 bg-cyan-200">
             <h2 className="p-5">Welcome to our Commuinity Marketplace</h2>
@@ -9,6 +10,7 @@ export default function Hero() {
             <p>
                 Why wait? Join us now and start sharing your items with your neighbor!
             </p>
+<LogInWithGoogle getuser={getuser}/>
         </section>
     )
 }

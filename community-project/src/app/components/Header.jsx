@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import LogInWithGoogle from './LoginWithGoogle';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebaseConfig';
 
 export default function Header() {
     return (
@@ -10,23 +13,14 @@ export default function Header() {
         <Container>
           <Navbar.Brand href="#home">Community Site</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+         
+            <Nav className="ml-auto">
+
+   <LogInWithGoogle/>
+   <div className='btn btn-primary' onClick={()=> signOut(auth)}>Sign Out</div>
               <Nav.Link href="#home">Sign up</Nav.Link>
               <Nav.Link href="#link">Sign in</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
+              </Nav>
         </Container>
       </Navbar>
     )
