@@ -19,16 +19,25 @@
 ### Next Steps
 
 - Fix image src in LocalNews.jsx
+<<<<<<< HEAD
 - Start implenting google auth provider. 
 
 
 
 ## Day 2 Log
+=======
+- Start implenting google auth provider.
+
+  ## Day 2 Log
+>>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
 
 ### Tasks Completed
 
 - Created component for google sign in`.
+<<<<<<< HEAD
 -Displaying API data
+=======
+>>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
 
 ### Challenges and Solutions
 
@@ -41,4 +50,8 @@
 ### Next Steps
 
 
+<<<<<<< HEAD
 - Start implenting google auth provider. 
+=======
+- Start implenting google auth provider. 
+>>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
