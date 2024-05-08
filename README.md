@@ -20,3 +20,25 @@
 
 - Fix image src in LocalNews.jsx
 - Start implenting google auth provider. 
+
+
+
+## Day 2 Log
+
+### Tasks Completed
+
+- Created component for google sign in`.
+-Displaying API data
+
+### Challenges and Solutions
+
+- Encountering a problem with displaying API data on webpage
+
+### Learnings and Insights
+
+- Gained a better understanding of API implemntation.
+
+### Next Steps
+
+
+- Start implenting google auth provider. 

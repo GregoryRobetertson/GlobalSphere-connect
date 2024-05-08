@@ -2,7 +2,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import LogInWithGoogle from './LoginWithGoogle';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
