@@ -9,7 +9,8 @@ export default function LocalNews() {
     useEffect(() => {
         async function fetchNews() {
             try {
-                const response = await axios.get(`https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=${process.env.NEXT_PUBLIC_API_KEY}`);
+                const response = await axios.get (`https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=${process.env.NEXT_PUBLIC_API_KEY}`);
+                console.log(response.data);
                 setNews(response.data.articles);
             } catch (error) {  
                 console.error('Error loading data', error);
