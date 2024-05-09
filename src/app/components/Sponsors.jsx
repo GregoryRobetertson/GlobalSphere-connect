@@ -25,5 +25,3 @@ export default function Sponsors() {
         </section>
     );
 }
-
-Sponsors.displayName = 'Sponsors';
