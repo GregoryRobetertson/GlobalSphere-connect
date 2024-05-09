@@ -20,14 +20,27 @@
 - Start implementing the LoginWithGoogle component.
 
 
+## Day 2 Log
+
+### Tasks Completed
+
+- Successfully fetched data from gnews.io.
+
+### Challenges and Solutions
+
+- Api data wouldn't display on webpage
+- Copied and pasted api dat into a json file and sent axios to json.
+
+### Learnings and Insights
+
+- How to temporary fertch data til deployment
+  
+### Next Steps.
+
+- Start implementing the LoginWithGoogle component.
 
 
-
-
-
-
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
