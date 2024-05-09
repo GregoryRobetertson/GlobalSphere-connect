@@ -7,7 +7,7 @@ import LogInWithGoogle from './LoginWithGoogle';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 
-export default function Header() {
+export default function Header(getUser) {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
@@ -16,7 +16,7 @@ export default function Header() {
          
             <Nav className="ml-auto">
 
-   <LogInWithGoogle/>
+   <LogInWithGoogle getUser={getUser}/>
    <div className='btn btn-primary' onClick={()=> signOut(auth)}>Sign Out</div>
               <Nav.Link href="#home">Sign up</Nav.Link>
               <Nav.Link href="#link">Sign in</Nav.Link>

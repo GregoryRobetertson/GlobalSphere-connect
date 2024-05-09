@@ -18,14 +18,10 @@ export default function Home() {
 function getUser(user) {
   setUser(user);
 }
-
-  auth;
   return (
     <main>
-      {console.log(user)}
       <Header  getUser={getUser}/>
       <Hero/>
-      <h1 className="m-5">Hello Community</h1>
       <LocalNews/>
       <Sponsors/>
       

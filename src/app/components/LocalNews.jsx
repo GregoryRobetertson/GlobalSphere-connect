@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from "react";
 import NewsCard from "./NewsCard";
 import axios from "axios";
@@ -7,8 +8,7 @@ export default function LocalNews() {
 
     useEffect(() => {
         async function fetchNews() {
-            try {
-                const response = await axios.get("/data.json");
+            try {                const response = await axios.get("/data.json");
                 setNews(response.data.articles);
                 console.log(response.data.articles);
             } catch (error) {

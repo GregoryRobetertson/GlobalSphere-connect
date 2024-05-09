@@ -1,57 +1,36 @@
-# project-level3
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Day 1 Log
+## Getting Started
 
-### Tasks Completed
+First, run the development server:
 
-- Initialized the Next.js project with `create-next-app`.
-- Set up Firebase integration for authentication.
-- Began setting up the components and implemented an api key to fetch news data.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Challenges and Solutions
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Encountered problems with my api, In LocalNews.jsx my map function wasn't returning the NewsCard component
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-### Learnings and Insights
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- Gained a better understanding of API implemntation.
+## Learn More
 
-### Next Steps
+To learn more about Next.js, take a look at the following resources:
 
-- Fix image src in LocalNews.jsx
-<<<<<<< HEAD
-- Start implenting google auth provider. 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
-## Day 2 Log
-=======
-- Start implenting google auth provider.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-  ## Day 2 Log
->>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
-
-### Tasks Completed
-
-- Created component for google sign in`.
-<<<<<<< HEAD
--Displaying API data
-=======
->>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
-
-### Challenges and Solutions
-
-- Encountering a problem with displaying API data on webpage
-
-### Learnings and Insights
-
-- Gained a better understanding of API implemntation.
-
-### Next Steps
-
-
-<<<<<<< HEAD
-- Start implenting google auth provider. 
-=======
-- Start implenting google auth provider. 
->>>>>>> c469a7d6c54a35ee5f7b0e37c9d0c17bea7e9a36
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
