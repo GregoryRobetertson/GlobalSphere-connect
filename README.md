@@ -1,3 +1,32 @@
+## Day 1 Log
+
+### Tasks Completed
+
+- Initialized the Next.js project with `create-next-app`.
+- Set up Firebase integration for authentication.
+- Began creating the header and hero.
+
+### Challenges and Solutions
+
+
+### Learnings and Insights
+
+- Learned about the benefits of using Next.js for server-side rendering and its impact on SEO.
+- Gained a better understanding of Firebase's authentication flow.
+
+### Next Steps
+
+- Add news api from gnews.com.
+- Start implementing the LoginWithGoogle component.
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
