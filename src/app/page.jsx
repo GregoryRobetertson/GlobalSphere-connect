@@ -1,30 +1,33 @@
 'use client';
-import { useEffect, useState } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import LocalNews from "./components/LocalNews";
-import Sponsors from "./components/Sponsors";
-import { auth } from "./firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Hero from './components/Hero';
 
+import LocalNews from './components/LocalNews';
+import Sponsors from './components/Sponsors';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebaseConfig';
 
 export default function Home() {
   const [user, setUser] = useState(null);
-  useEffect(()=> {
-    onAuthStateChanged(auth,( user) =>  {
-      
-    })
-  })
-function getUser(user) {
-  setUser(user);
-}
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      console.log(user);
+    });
+  }, []);
+  function getUser(user) {
+    setUser(user);
+  }
+
   return (
     <main>
-      <Header  getUser={getUser}/>
-      <Hero/>
-      <LocalNews/>
-      <Sponsors/>
-      
+      <Header getUser={getUser} />
+      <Hero />
+      <LocalNews />
+      <Sponsors />
+      <Footer />
     </main>
   );
 }
