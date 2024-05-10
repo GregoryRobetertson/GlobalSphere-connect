@@ -1,3 +1,68 @@
+# Day 1 Log
+
+## Tasks Completed
+
+- Initialized the Next.js project with `create-next-app`.
+- Set up Firebase integration for authentication.
+- Began creating the header and hero.
+
+## Challenges and Solutions
+
+- 
+
+## Learnings and Insights
+
+- Learned about the benefits of using Next.js for server-side rendering and its impact on SEO.
+- Gained a better understanding of Firebase's authentication flow.
+
+## Next Steps
+
+- Add news API from gnews.com.
+- Start implementing the LoginWithGoogle component.
+
+---
+
+# Day 2 Log
+
+## Tasks Completed
+
+- Successfully fetched data from gnews.io.
+
+## Challenges and Solutions
+
+- API data wouldn't display on the webpage.
+- Copied and pasted API data into a JSON file and sent Axios to JSON.
+
+## Learnings and Insights
+
+- How to temporarily fetch data till deployment.
+
+## Next Steps
+
+- Start implementing the LoginWithGoogle component.
+
+---
+
+# Day 3 Log
+
+## Tasks Completed
+
+- None.
+
+## Challenges and Solutions
+
+- Error when I try to log in with Google.
+
+## Learnings and Insights
+
+- New ways to debug.
+
+## Next Steps
+
+- Continue debugging.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -12,6 +77,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
