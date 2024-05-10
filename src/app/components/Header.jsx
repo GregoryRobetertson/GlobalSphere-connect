@@ -1,28 +1,58 @@
 'use client';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 
-import LogInWithGoogle from './LoginWithGoogle';
+import LoginWithGoogle from './LoginWithGoogle';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-export default function Header({getUser}) {
+export default function Header({ getUser }) {
   const [user, setUser] = useState(null);
-useEffect(() => {
-  onAuthStateChanged(auth, (user) => {
-   setUser(user);
-  }, [])
-})
+  const [isOpen, setIsOpen] = useState(null);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, []);
 
-    return (
-        <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="#home">Community Site</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-         
-            <Nav className="ml-auto">
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white min-h-[70px] tracking-wide relative z-50">
+      <div className="flex items-center justify-between w-full">
+        <Link className="text-xl font-bold" href="/">
+          Community Site
+        </Link>
+        <nav>
+          <button onClick={toggleMenu} className="lg:hidden">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-16 6h16'}
+              />
+            </svg>
+          </button>
+          <ul
+            className={`${
+              isOpen ? 'flex' : 'hidden'
+            } lg:flex flex-col lg:flex-row gap-x-5 items-center mt-3`}
+          >
+            <li>
+           <Link
+  className="hover:text-blue-500 text-gray-700"
+  href="/dashboard"
+>
+  Dashboard
+</Link>
+            </li>
             {user ? (
               <li>
                 <button
@@ -34,12 +64,12 @@ useEffect(() => {
               </li>
             ) : (
               <li>
-                <LogInWithGoogle getUser={getUser} />
+                <LoginWithGoogle getUser={getUser} />
               </li>
             )}
-
-              </Nav>
-        </Container>
-      </Navbar>
-    )
-}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}  
