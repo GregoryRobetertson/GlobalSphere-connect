@@ -4,10 +4,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import LogInWithGoogle from './LoginWithGoogle';
-import { signOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
+import { useEffect, useState } from 'react';
 
-export default function Header(getUser) {
+export default function Header({getUser}) {
+  const [user, setUser] = useState(null);
+useEffect(() => {
+  onAuthStateChanged(auth, (user) => {
+   setUser(user);
+  }, [])
+})
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
@@ -15,11 +23,21 @@ export default function Header(getUser) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
          
             <Nav className="ml-auto">
+            {user ? (
+              <li>
+                <button
+                  onClick={() => signOut(auth)}
+                  className="text-gray-700 hover:text-blue-500"
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <li>
+                <LogInWithGoogle getUser={getUser} />
+              </li>
+            )}
 
-   <LogInWithGoogle getUser={getUser}/>
-   <div className='btn btn-primary' onClick={()=> signOut(auth)}>Sign Out</div>
-              <Nav.Link href="#home">Sign up</Nav.Link>
-              <Nav.Link href="#link">Sign in</Nav.Link>
               </Nav>
         </Container>
       </Navbar>

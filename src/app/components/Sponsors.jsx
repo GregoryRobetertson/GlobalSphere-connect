@@ -4,24 +4,22 @@ import { sponsors } from "./sponsorsList";
 
 export default function Sponsors() {
     return (
-        <section className="m-5">
-            <h2>Meet Our Sponsors</h2>
-            <div className="flex flex-wrap justify-center gap-4 p-5">
-                {sponsors.map((sponsor, index) => (
-                    <div key={index}> 
-                        <Image
-                            width={150}
-                            height={150}
-                            src={`/${sponsor.src}.png`}
-                            alt={sponsor.name + "Logo"}
-                            className="rounded-lg shadow-lg"
-                        />
-                        <h3 className="p-1.5">{sponsor.name}</h3>
-                        <p>{sponsor.description}</p>
-                        <p>{sponsor.contact}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
+        <section className="text-center">
+        <h2 className="text-4xl font-bold mt-20 mb-16">Meet Our Sponsors</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16">
+            {sponsors.map((sponsor, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-lg p-8">
+                    <img
+                        src={`/${sponsor.src}.png`}
+                        alt={sponsor.name + " Logo"}
+                        className="mx-auto w-32 h-32 object-contain"
+                    />
+                    <h3 className="text-xl font-bold mt-4 mb-2">{sponsor.name}</h3>
+                    <p className="text-gray-700 mb-4">{sponsor.description}</p>
+                    <p className="text-blue-500">{sponsor.contact}</p>
+                </div>
+            ))}
+        </div>
+    </section>
     );
 }
