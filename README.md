@@ -61,6 +61,25 @@
 
 - Continue debugging.
 
+# Day 4 Log
+
+## Tasks Completed
+
+- Added styles to the webpage
+
+## Challenges and Solutions
+
+- None
+
+## Learnings and Insights
+
+- Better understanding on using tailwind css
+
+## Next Steps
+
+- Add more functionallity to the webpage
+
+
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
