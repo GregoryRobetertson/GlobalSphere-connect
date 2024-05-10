@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; // Import React
 import Header from '../components/Header';
 import Sponsors from '../components/Sponsors';
 import Modal from '../components/Modal';
@@ -10,7 +10,7 @@ import Posts from './components/Posts';
 import Footer from '../components/Footer';
 import AddPost from '../components/AddPost';
 
-export default function page() {
+export default function Page() { // Renamed to Page
   const [show, setShow] = useState(false);
   const [user, setUser] = useState(null);
 

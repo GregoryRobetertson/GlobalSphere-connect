@@ -4,13 +4,14 @@ import React, { useState } from 'react'
 import AddComment from '@/app/components/AddComment';
 import Modal from '@/app/components/Modal';
 import ViewComments from '@/app/components/ViewComments';
-import Edit from '@/app/svgs/Edit';
-import Trash from '@/app/svgs/Trash';
+
 
 import { Accordion } from 'react-bootstrap';
+import Trash from '@/app/components/svgs/Trash';
+import Edit from '@/app/components/svgs/Edit';
 
 export default function Post({post, user}) {
-    cosnt [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
 
     function onShow(bool) {
         setShow(bool);
