@@ -22,7 +22,7 @@ export default function Header({ getUser }) {
     <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white min-h-[70px] tracking-wide relative z-50">
       <div className="flex items-center justify-between w-full">
         <Link className="text-xl font-bold" href="/">
-          Community Site
+        GlobalSphere Connect
         </Link>
         <nav>
           <button onClick={toggleMenu} className="lg:hidden">
