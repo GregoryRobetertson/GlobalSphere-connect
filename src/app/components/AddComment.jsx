@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { auth, db } from '../firebaseConfig';
 import ViewComments from './ViewComments';
 
-
 export default function AddComment({ post }) {
   const [text, setText] = useState('');
 

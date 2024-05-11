@@ -8,7 +8,7 @@ export default function Sponsors() {
         <h2 className="text-4xl font-bold mt-20 mb-16">Meet Our Sponsors</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16">
             {sponsors.map((sponsor, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg p-8">
+                <div key={index} className="bg-gray-300 rounded-lg p-8">
                     <img
                         src={`/${sponsor.src}.png`}
                         alt={sponsor.name + " Logo"}

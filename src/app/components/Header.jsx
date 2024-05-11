@@ -1,5 +1,3 @@
-'use client';
-
 import LoginWithGoogle from './LoginWithGoogle';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
@@ -8,7 +6,8 @@ import { useEffect, useState } from 'react';
 
 export default function Header({ getUser }) {
   const [user, setUser] = useState(null);
-  const [isOpen, setIsOpen] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user);
@@ -18,16 +17,19 @@ export default function Header({ getUser }) {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white min-h-[70px] tracking-wide relative z-50">
+    <header className="flex shadow-md py-4 px-4 sm:px-10 bg-sky-950 min-h-[70px] tracking-wide relative z-50">
       <div className="flex items-center justify-between w-full">
-        <Link className="text-xl font-bold" href="/">
-        GlobalSphere Connect
+        <Link href="/" passHref>
+          <div className="text-xl font-bold text-white hover:text-blue-100 cursor-pointer">
+            GlobalSphere Connect
+          </div>
         </Link>
         <nav>
           <button onClick={toggleMenu} className="lg:hidden">
             <svg
-              className="w-6 h-6"
+              className="w-6 h-6 text-white cursor-pointer"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -45,19 +47,16 @@ export default function Header({ getUser }) {
               isOpen ? 'flex' : 'hidden'
             } lg:flex flex-col lg:flex-row gap-x-5 items-center mt-3`}
           >
-            <li>
-           <Link
-  className="hover:text-blue-500 text-gray-700"
-  href="/dashboard"
->
-  Dashboard
-</Link>
+            <li className="my-2 lg:my-0">
+              <Link href="/dashboard" passHref>
+                <div className="text-white hover:text-blue-100 cursor-pointer">Dashboard</div>
+              </Link>
             </li>
             {user ? (
               <li>
                 <button
                   onClick={() => signOut(auth)}
-                  className="text-gray-700 hover:text-blue-500"
+                  className="text-white hover:text-blue-100 cursor-pointer"
                 >
                   Logout
                 </button>
@@ -72,4 +71,4 @@ export default function Header({ getUser }) {
       </div>
     </header>
   );
-}  
+}

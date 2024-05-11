@@ -1,17 +1,14 @@
-
 import Card from 'react-bootstrap/Card';
- export default function NewsCard({article}) {
 
-        return (
-            <Card className='bg-white shadow-[0_2px_18px_-6px_rbga(0,0,0,0.2)] w-full max-w-sm rounded-lg overflow-hidden mx-auto font-[sans-serif]' >
-              <Card.Img variant="top" src={article.image}/>
-              <Card.Body>
-                <Card.Title>{article.title}</Card.Title>
-                <Card.Text>
-                  {article.description}
-                </Card.Text>
-                <a href={article.url} className='px-6 py-2.5 mt-6 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600'>Read more</a>
-              </Card.Body>
-            </Card>
-          );
- }
+export default function NewsCard({ article }) {
+    return (
+        <Card className='w-full max-w-sm rounded-lg overflow-hidden mx-auto font-sans h-full'>
+            <Card.Img variant="top" src={article.image} className="h-48 object-cover" />
+            <Card.Body className="h-full flex flex-col justify-between bg-gray-300">
+                <Card.Title className="text-xl font-semibold">{article.title}</Card.Title>
+                <Card.Text className="text-gray-700">{article.description}</Card.Text>
+                <a href={article.url} className='block w-full py-2 text-center text-white bg-blue-500 rounded-md text-sm font-semibold hover:bg-blue-600 transition duration-300'>Read more</a>
+            </Card.Body>
+        </Card>
+    );
+}
