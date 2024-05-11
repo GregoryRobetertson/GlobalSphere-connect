@@ -19,7 +19,6 @@ export default function Post({ post, user }) {
         const docRef = doc(db, 'posts', post.id);
         const docSnap = await getDoc(docRef);
         if (!docSnap.exists()) {
-          // If the post is deleted, set deleted state to true
           setDeleted(true);
         }
       } catch (error) {
