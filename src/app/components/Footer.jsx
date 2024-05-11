@@ -13,9 +13,6 @@ export default function Footer() {
           <Link href="/about" className="text-gray-300 hover:text-white">
             About Us
           </Link>
-          <a href="mailto:geefromla@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20Gregory,">
-            Contact Us
-          </a>
         </div>
       </div>
     </footer>

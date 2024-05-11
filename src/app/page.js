@@ -8,9 +8,13 @@ import LocalNews from './components/LocalNews';
 import Sponsors from './components/Sponsors';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebaseConfig';
+import Weather from './components/Weather';
+
+
 
 export default function Home() {
   const [user, setUser] = useState(null);
+
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -25,6 +29,7 @@ export default function Home() {
     <main>
       <Header getUser={getUser} />
       <Hero />
+     <Weather/>
       <LocalNews />
       <Sponsors />
       <Footer />
