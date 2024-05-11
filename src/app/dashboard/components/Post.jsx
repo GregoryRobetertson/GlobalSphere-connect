@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import { db } from '@/app/firebaseConfig';

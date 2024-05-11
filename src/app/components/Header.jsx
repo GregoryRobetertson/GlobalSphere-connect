@@ -1,3 +1,4 @@
+'use client'
 import LoginWithGoogle from './LoginWithGoogle';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
