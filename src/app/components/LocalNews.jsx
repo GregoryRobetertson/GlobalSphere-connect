@@ -10,7 +10,7 @@ export default function LocalNews() {
   useEffect(() => {
     async function fetchNews() {
       try {
-        const response = await axios.get(`https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=f99a5be2836b4f2556a9210782282c81`);
+        const response = await axios.get(`https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=f99a5be2836b4f2556a9210782282c81`);
         setNews(response.data.articles);
         console.log(response.data);
         setLoading(false);
@@ -28,7 +28,7 @@ export default function LocalNews() {
       {!isLoading ? (
         <div className="flex gap-5 flex-wrap justify-center">
           {news.map((item, index) => (
-            <NewsCard key={index} article={item}   />
+            <NewsCard key={index} article={item}  />
           ))}
         </div>
       ) : (
