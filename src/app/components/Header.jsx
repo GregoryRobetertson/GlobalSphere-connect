@@ -1,9 +1,9 @@
 'use client';
-import LoginWithGoogle from '../auth/LoginWithGoogle';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../firebaseConfig';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { auth } from "../firebaseConfig";
 
 export default function Header({ getUser }) {
   const [user, setUser] = useState(null);
@@ -53,11 +53,6 @@ export default function Header({ getUser }) {
                 <div className="text-white hover:text-blue-100 cursor-pointer">Dashboard</div>
               </Link>
             </li>
-            <div className="flex space-x-4">
-          <Link href="/auth" className="text-gray-300 hover:text-white">
-            Sign up
-          </Link>
-          </div>
             {user ? (
               <li>
                 <button
@@ -69,7 +64,9 @@ export default function Header({ getUser }) {
               </li>
             ) : (
               <li>
-                <LoginWithGoogle getUser={getUser} />
+                <Link href="/auth" className="text-gray-300 hover:text-white">
+                  Sign up
+                </Link>
               </li>
             )}
           </ul>
