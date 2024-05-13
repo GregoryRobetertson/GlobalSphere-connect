@@ -1,5 +1,5 @@
-'use client'
-import LoginWithGoogle from './LoginWithGoogle';
+'use client';
+import LoginWithGoogle from '../auth/LoginWithGoogle';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 import Link from 'next/link';
@@ -53,6 +53,11 @@ export default function Header({ getUser }) {
                 <div className="text-white hover:text-blue-100 cursor-pointer">Dashboard</div>
               </Link>
             </li>
+            <div className="flex space-x-4">
+          <Link href="/auth" className="text-gray-300 hover:text-white">
+            Sign up
+          </Link>
+          </div>
             {user ? (
               <li>
                 <button
