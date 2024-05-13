@@ -6,7 +6,6 @@ import axios from "axios";
 export default function LocalNews() {
   const [news, setNews] = useState([]);
   const [isLoading, setLoading] = useState(true);
-
   useEffect(() => {
     async function fetchNews() {
       try {
