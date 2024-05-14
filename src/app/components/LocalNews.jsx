@@ -9,7 +9,7 @@ export default function LocalNews() {
   useEffect(() => {
     async function fetchNews() {
       try {
-        const response = await axios.get(`https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=f99a5be2836b4f2556a9210782282c81`);
+        const response = await axios.get(`https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=${process.env.NEXT_PUBLIC_NEWS_KEY}`);
         setNews(response.data.articles);
         console.log(response.data);
         setLoading(false);

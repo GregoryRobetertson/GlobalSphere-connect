@@ -13,7 +13,7 @@ export default function Weather() {
     e.preventDefault(); // Add () to call the function
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=db42535f278c6419ed2c7d8df4df21f1`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
       );
       setWeather(response.data);
       console.log(response.data);
@@ -71,25 +71,62 @@ export default function Weather() {
         )}
         {error && <p className="text-red-500 text-lg font-semibold">{error}</p>}
         {weather && weather.weather && weather.weather.length > 0 && (
-          <div className="mt-6 bg-gray-300 rounded-lg shadow-lg p-6">
-            <h2 className="text-3xl font-bold text-gray-800">{weather.name}</h2>
-            <p className="text-lg text-gray-600">
-              {weather.weather[0].description}
+        <div className="mt-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-opacity-50 relative p-8 rounded-md mb-16">
+        <p className="text-2xl text-center pb-6 text-white">Weather in {weather.name}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {Math.round(weather.main.feels_like - 273.15)}&#176;
             </p>
-            <div className="flex items-center mt-4">
-              <p className="text-5xl font-bold text-blue-500">
-                {Math.round(weather.main.temp - 273.15)}°C
-              </p>
-            </div>
-            <div className="mt-4">
-              <p className="text-lg text-gray-700">
-                Humidity: {weather.main.humidity}%
-              </p>
-              <p className="text-lg text-gray-700">
-                Wind Speed: {weather.wind.speed} m/s
-              </p>
-            </div>
+            <p className="text-xl text-gray-200">Feels Like</p>
           </div>
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {weather.main.humidity}%
+            </p>
+            <p className="text-xl text-gray-200">Humidity</p>
+          </div>
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {weather.wind.speed.toFixed(0)} m/s
+            </p>
+            <p className="text-xl text-gray-200">Wind Speed</p>
+          </div>
+          <div className="text-center">
+            {weather.weather.map((condition, index) => (
+              <div key={index}>
+                {condition.main === "Rain" && (
+                  <p className="text-2xl text-gray-100">Rainy</p>
+                )}
+                {condition.main === "Clouds" && (
+                  <p className="text-2xl text-gray-100">Cloudy</p>
+                )}
+                {/* Add more conditions as needed */}
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {weather.main.temp_min.toFixed(0)}&#176;
+            </p>
+            <p className="text-xl text-gray-200">Min Temperature</p>
+          </div>
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {weather.main.temp_max.toFixed(0)}&#176;
+            </p>
+            <p className="text-xl text-gray-200">Max Temperature</p>
+          </div>
+          <div className="text-center">
+            <p className="font-bold text-2xl text-gray-100">
+              {weather.visibility} m
+            </p>
+            <p className="text-xl text-gray-200">Visibility</p>
+          </div>
+        </div>
+      </div>
+      
+
         )}
       </div>
     </>
