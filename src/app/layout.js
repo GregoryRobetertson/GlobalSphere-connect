@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export const metadata = {
-  title: "Communtiy Project",
+  title: "Globalsphere Connect ",
   description: "Search for new products, buy, sale, trade. Local Community",
 };
 
